@@ -1,0 +1,18 @@
+#######################################
+# Edit this stuff to suit your needs: #
+#######################################
+
+export HTTPIE_CONFIG_DIR="$HOME/gooee/httpie/"
+export HTTP_USERNAME=
+export HTTP_PASSWORD=
+export HTTP_HOST=
+
+###############################################
+# You probably don't need to edit this stuff: #
+###############################################
+
+export JWT_AUTH_PREFIX="JWT"
+
+./login.sh
+
+alias req="http --auth-type=jwt --auth=$(cat jwt-token): $HTTP_HOST"
